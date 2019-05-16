@@ -8,18 +8,26 @@ collections:
     label: "Work"
     folder: "src/content/work"
     create: true
-    format: "yml"
     fields:
+      -
+        name: "template", 
+        widget: "hidden"
+        default: "work"
       -
         label: "Title"
         name: "title"
         widget: "string"
+        
   -
     name: "research"
     label: "Research"
     folder: "src/content/research"
     create: true
     fields:
+      -
+        name: "template", 
+        widget: "hidden"
+        default: "research"
       -
         label: "Title"
         name: "title"
@@ -32,6 +40,7 @@ collections:
         name: "press"
         file: "src/content/press.yml"
         fields:
+          - {name: template, widget: hidden, default: press}
           - {label: Title, name: title, widget: string}
           - label: Press Items
             name: pressItems
@@ -44,10 +53,26 @@ collections:
         name: "office"
         file: "src/content/office.yml"
         fields:
+          - {name: template, widget: hidden, default: office }
           - {label: Title, name: title, widget: string}
-          - label: Content
-            name: content
+          - label: Principals
+            name: principals
+            label_singular: principal
             widget: list
             fields:
               - {label: Name, name: name, widget: string}
-              - {label: Address, name: address, widget: string}
+              - {label: URL, name: url, widget: string}
+          - label: Collaborators
+            name: collaborators
+            label_singular: collaborators
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: URL, name: url, widget: string}
+          - label: Addresses
+            name: addresses
+            label_singular: address
+            widget: list
+            fields:
+              - {label: Address, name: address, widget: markdown}
+              - {label: URL, name: url, widget: string}
