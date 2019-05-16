@@ -1,5 +1,0 @@
----
-template: work
-title: TESST
----
-

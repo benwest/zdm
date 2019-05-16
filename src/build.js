@@ -19,7 +19,7 @@ var allFiles = dir => {
 
 var renderSite = ( inDir, outDir ) => {
     allFiles( inDir ).forEach( file => {
-        var url = path.relative( inDir, file );
+        var url = path.basename( path.relative( inDir, file ) );
         console.log( `Rendering ${ url }` );
         var content = yaml.parse( fs.readFileSync( file, 'utf8' ) ) || {};
         if ( !content.template ) {
@@ -33,8 +33,7 @@ var renderSite = ( inDir, outDir ) => {
         }
         var template = require( templateFile );
         var html = template( content );
-        var outFilename = path.basename( url ) + '.html'
-        var outFile = path.join( outDir, outFilename );
+        var outFile = path.join( outDir, url + '.html' );
         fs.writeFileSync( outFile, html, 'utf8' );
     })
 }
