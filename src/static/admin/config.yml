@@ -23,4 +23,29 @@ collections:
         label: "Title"
         name: "title"
         widget: "string"
-    
+  - 
+    name: "pages"
+    label: "Pages"
+    files:
+      - label: "Press"
+        name: "press"
+        file: "src/content/press.yml"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - label: Press Items
+            name: pressItems
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: URL, name: url, widget: string}
+      - label: "Office"
+        name: "office"
+        file: "src/content/office.yml"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - label: Content
+            name: content
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Address, name: address, widget: string}
