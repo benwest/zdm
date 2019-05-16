@@ -7,6 +7,7 @@ collections:
     name: "work"
     label: "Work"
     folder: "src/content/work"
+    format: 'yml'
     create: true
     fields:
       - {name: template, widget: hidden, default: work}
@@ -17,6 +18,7 @@ collections:
     name: "research"
     label: "Research"
     folder: "src/content/research"
+    format: 'yml'
     create: true
     fields:
       -
