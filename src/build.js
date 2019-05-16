@@ -2,6 +2,8 @@ var fs = require('fs');
 var path = require('path');
 var yaml = require('yaml');
 
+var TEMPLATES = path.join( process.cwd(), 'src', 'templates' );
+
 var renderSite = ( inDir, outDir ) => {
     var renderDirectory = dir => {
         fs.readdirSync( dir ).forEach( filename => {
@@ -15,6 +17,8 @@ var renderSite = ( inDir, outDir ) => {
                     console.log( `No template field in ${ file }` );
                     return;
                 }
+                var templatePath = path.join( TEMPLATES, content.template + '.js' );
+                if ( !fs.existsSync() )
                 var template = require( `./templates/${ content.template }` );
                 var html = template( content );
                 var outFilename = path.basename( url ) + '.html'

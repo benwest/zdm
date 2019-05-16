@@ -10,7 +10,7 @@ collections:
     create: true
     fields:
       -
-        name: "template", 
+        name: "template"
         widget: "hidden"
         default: "work"
       -
@@ -25,7 +25,7 @@ collections:
     create: true
     fields:
       -
-        name: "template", 
+        name: "template"
         widget: "hidden"
         default: "research"
       -
