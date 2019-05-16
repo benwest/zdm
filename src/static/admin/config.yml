@@ -8,6 +8,7 @@ collections:
     label: "Work"
     folder: "src/content/work"
     create: true
+    format: "yml"
     fields:
       -
         label: "Title"
