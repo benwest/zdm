@@ -9,14 +9,9 @@ collections:
     folder: "src/content/work"
     create: true
     fields:
-      -
-        name: "template"
-        widget: "hidden"
-        default: "work"
-      -
-        label: "Title"
-        name: "title"
-        widget: "string"
+      - {name: template, widget: hidden, default: work}
+      - {label: Title, name: title, widget: string}
+
         
   -
     name: "research"
