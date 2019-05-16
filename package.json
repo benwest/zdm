@@ -1,0 +1,21 @@
+{
+  "name": "zdm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:static": "cp -r src/static/* dist",
+    "build": "npm run build:static"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bongintl/zdm.git"
+  },
+  "author": "bong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bongintl/zdm/issues"
+  },
+  "homepage": "https://github.com/bongintl/zdm#readme"
+}

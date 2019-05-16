@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: "src/assets"
+collections:
+  -
+    name: "work"
+    label: "Work"
+    folder: "src/content/work"
+    create: true
+    fields:
+      -
+        label: "Title"
+        name: "title"
+        widget: "string"
+  -
+    name: "research"
+    label: "Research"
+    folder: "src/content/research"
+    create: true
+    fields:
+      -
+        label: "Title"
+        name: "title"
+        widget: "string"
+    

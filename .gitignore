@@ -1,5 +1,7 @@
 .c9
 
+dist/*
+
 # Logs
 logs
 *.log
