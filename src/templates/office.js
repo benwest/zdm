@@ -1,1 +1,0 @@
-module.exports = ({ title }) => `<h1>Office: ${ title }</h1>`
