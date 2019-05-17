@@ -32,15 +32,10 @@
     "onchange": "^5.2.0"
   },
   "dependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/register": "^7.4.4",
     "js-beautify": "^1.10.0",
     "mkdirp": "^0.5.1",
     "nanohtml": "^1.6.2",
     "parcel-bundler": "^1.12.3",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "yaml": "^1.5.1"
   }
 }
