@@ -1,13 +1,15 @@
-var React = require('react');
+var html = require('nanohtml');
 
-module.exports = ({ site, children }) => (
+module.exports = children => html`
+    <!doctype html>
     <html lang="en">
         <head>
-            <meta charSet="UTF-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title>ZDM</title>
             <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+            <link rel="stylesheet" href="/style.scss">
         </head>
         <body>
             <h1>zero-degree machine</h1>
@@ -17,8 +19,8 @@ module.exports = ({ site, children }) => (
                 <a href="/research">Research</a>
                 <a href="/press">Press</a>
             </nav>
-            { children }
-            <script src="./bundle.js"/>
+            ${ children }
+            <script src="./bundle.js"></script>
         </body>
     </html>
-)
+`

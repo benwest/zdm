@@ -1,11 +1,5 @@
-require('@babel/register')({
-    plugins: [ '@babel/plugin-transform-react-jsx' ]
-})
-
 var fs = require('fs');
 var path = require('path');
-var React = require('react');
-var { renderToStaticMarkup } = require('react-dom/server');
 var beautify = require('js-beautify');
 
 var TEMPLATES = path.join( process.cwd(), 'src', 'templates' );
@@ -16,12 +10,12 @@ module.exports = ( page, site ) => {
         console.error( `No template field` );
         return '';
     }
-    var templateFile = path.join( TEMPLATES, page.template + '.jsx' );
+    var templateFile = path.join( TEMPLATES, page.template + '.js' );
     if ( !fs.existsSync( templateFile ) ) {
         console.error( `Template ${ templateFile } not found` );
         return '';
     }
-    var component = require( templateFile );
-    var html = renderToStaticMarkup( React.createElement( component, { site, page }) );
-    return beautify.html( "<!DOCTYPE html>" + html );
+    var template = require( templateFile );
+    var html = template( page, site );
+    return beautify.html( html );
 }
