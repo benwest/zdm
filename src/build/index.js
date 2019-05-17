@@ -4,7 +4,7 @@ var yaml = require('yaml');
 var mkdirp = require('mkdirp');
 
 var read = require('./read');
-var render = require('./render-jsx');
+var render = require('./render');
 var { extensionless, flatten } = require('./utils');
 
 var config = yaml.parse( fs.readFileSync( './src/cms.yml', 'utf8' ) );
