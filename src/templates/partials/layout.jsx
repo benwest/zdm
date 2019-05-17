@@ -10,6 +10,13 @@ module.exports = ({ site, children }) => (
             <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </head>
         <body>
+            <h1>zero-degree machine</h1>
+            <nav>
+                <a href="/">Work</a>
+                <a href="/office">Office</a>
+                <a href="/research">Research</a>
+                <a href="/press">Press</a>
+            </nav>
             { children }
             <script src="./bundle.js"/>
         </body>
