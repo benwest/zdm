@@ -7,9 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:static": "cp -r src/static/* dist && cp src/cms.yml dist/admin/config.yml",
     "build:html": "node src/build",
-    "build": "mkdir -p dist && npm run build:static && npm run build:html",
-    "start": "http-server dist",
-    "dev": "npm start"
+    "build:scss": "parcel build src/scss/style.scss -d dist",
+    "build:js": "parcel build src/js/main.js -d dist",
+    "build": "mkdir -p dist && npm run build:static && npm run build:html && npm run build:scss && npm run build:js",
+    "watch:html": "onchange 'src/content/**/*' 'src/templates/**/*' -- npm run build:html",
+    "watch:scss": "parcel watch src/scss/style.scss -d dist",
+    "watch:js": "parcel watch src/js/main.js -d dist",
+    "serve": "http-server dist",
+    "dev": "mkdir -p dist && concurrently \"npm:watch:*\" \"npm:serve\""
   },
   "repository": {
     "type": "git",
@@ -22,16 +27,18 @@
   },
   "homepage": "https://github.com/bongintl/zdm#readme",
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "concurrently": "^4.1.0",
+    "http-server": "^0.11.1",
+    "onchange": "^5.2.0"
   },
   "dependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/register": "^7.4.4",
     "js-beautify": "^1.10.0",
-    "marked": "^0.6.2",
     "mkdirp": "^0.5.1",
     "nanohtml": "^1.6.2",
+    "parcel-bundler": "^1.12.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "yaml": "^1.5.1"
