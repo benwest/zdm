@@ -1,0 +1,1 @@
+module.exports = ({ title }) => `<h1>Work: ${ title }</h1>`

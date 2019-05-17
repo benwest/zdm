@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:static": "cp -r src/static/* dist",
+    "build:static": "cp -r src/static/* dist && cp src/cms.yml dist/admin/config.yml",
     "build": "mkdir dist && npm run build:static",
     "start": "http-server dist",
     "dev": "npm start"
@@ -24,8 +24,15 @@
     "http-server": "^0.11.1"
   },
   "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/register": "^7.4.4",
+    "js-beautify": "^1.10.0",
     "marked": "^0.6.2",
+    "mkdirp": "^0.5.1",
     "nanohtml": "^1.6.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "yaml": "^1.5.1"
   }
 }
