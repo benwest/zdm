@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:static": "cp -r src/static/* dist && cp src/cms.yml dist/admin/config.yml",
-    "build": "mkdir dist && npm run build:static",
+    "build:html": "node src/build",
+    "build": "mkdir -p dist && npm run build:static && npm run build:html",
     "start": "http-server dist",
     "dev": "npm start"
   },

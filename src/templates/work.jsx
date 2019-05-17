@@ -4,8 +4,12 @@ var Layout = require('./partials/layout.jsx');
 
 module.exports = ({ page, site }) => (
     <Layout site={ site }>
-        { site.work.map( project => (
-            <h1>{ project.title }</h1>
-        )) }
+        <ul>
+            { site.work.map( project => (
+                <li key={ project.slug }>
+                    <a href={ `/work/${ project.slug }` }>{ project.title }</a>
+                </li>
+            )) }
+        </ul>
     </Layout>
 )

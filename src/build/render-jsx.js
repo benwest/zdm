@@ -18,7 +18,7 @@ module.exports = ( page, site ) => {
     }
     var templateFile = path.join( TEMPLATES, page.template + '.jsx' );
     if ( !fs.existsSync( templateFile ) ) {
-        console.error( `Template ${ page.template } not found` );
+        console.error( `Template ${ templateFile } not found` );
         return '';
     }
     var component = require( templateFile );
