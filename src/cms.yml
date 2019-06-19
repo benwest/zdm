@@ -10,8 +10,9 @@ collections:
     format: 'yml'
     create: true
     fields:
-      - {name: template, widget: hidden, default: project}
-      - {label: Title, name: title, widget: string}
+      - { name: template, widget: hidden, default: project }
+      - { label: Title, name: title, widget: string }
+      - { label: Thumbnail name: thumbnail, widget: image }
   -
     name: "research"
     label: "Research"
