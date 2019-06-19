@@ -14,6 +14,7 @@ collections:
       - { name: template, widget: hidden, default: project }
       - { label: Title, name: title, widget: string }
       - { label: Thumbnail, name: thumbnail, widget: image }
+      - { label: Body, name: body, widget: markdown, buttons: [] }
   -
     name: "research"
     label: "Research"
