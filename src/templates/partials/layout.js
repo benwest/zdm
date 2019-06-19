@@ -9,7 +9,7 @@ module.exports = children => html`
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title>ZDM</title>
             <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-            <link rel="stylesheet" href="/style.scss">
+            <link rel="stylesheet" href="/style.css">
         </head>
         <body>
             <h1>zero-degree machine</h1>
@@ -20,7 +20,7 @@ module.exports = children => html`
                 <a href="/press">Press</a>
             </nav>
             ${ children }
-            <script src="./bundle.js"></script>
+            <script src="/bundle.js"></script>
         </body>
     </html>
 `
