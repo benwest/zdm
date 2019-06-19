@@ -15,9 +15,9 @@ var readFile = file => {
 
 var readFolder = folder => {
     if ( !fs.existsSync( folder ) ) return [];
-    return fs.readdirSync( folder ).map( filename => {
-        return readFile( path.join( folder, filename ) );
-    })
+    return fs.readdirSync( folder )
+        .filter( filename => filename.endsWith( '.yml' ) )
+        .map( filename => readFile( path.join( folder, filename ) ) );
 }
 
 var readFiles = files => {

@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:static": "cp -r src/static/* dist && cp src/cms.yml dist/admin/config.yml",
+    "build:assets": "rsync -a src/assets dist/assets",
     "build:html": "node src/build",
     "build:bundle": "parcel build src/scss/style.scss src/js/main.js -d dist",
-    "build": "mkdir -p dist && npm run build:static && npm run build:html && npm run build:bundle",
+    "build": "mkdir -p dist && concurrently \"npm:build:*\"",
     "watch:html": "npm run build:html && onchange 'src/content/**/*' 'src/templates/**/*' -- npm run build:html",
     "watch:bundle": "parcel watch src/scss/style.scss src/js/main.js -d dist",
     "serve": "http-server dist",
