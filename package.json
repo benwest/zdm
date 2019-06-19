@@ -6,14 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:static": "cp -r src/static/* dist && cp src/cms.yml dist/admin/config.yml",
-    "build:assets": "rsync -a src/assets dist",
     "build:html": "node src/build",
     "build:bundle": "parcel build src/scss/style.scss src/js/main.js -d dist",
-    "build": "mkdir -p dist && concurrently \"npm:build:*\"",
+    "build": "run-s build:*",
     "watch:html": "npm run build:html && onchange 'src/content/**/*' 'src/templates/**/*' -- npm run build:html",
     "watch:bundle": "parcel watch src/scss/style.scss src/js/main.js -d dist",
     "serve": "http-server dist",
-    "dev": "mkdir -p dist && concurrently \"npm:watch:*\" \"npm:serve\""
+    "dev": "run-p watch:* serve"
   },
   "repository": {
     "type": "git",
@@ -26,7 +25,6 @@
   },
   "homepage": "https://github.com/bongintl/zdm#readme",
   "devDependencies": {
-    "concurrently": "^4.1.0",
     "http-server": "^0.11.1",
     "onchange": "^5.2.0"
   },
@@ -35,6 +33,7 @@
     "js-beautify": "^1.10.0",
     "mkdirp": "^0.5.1",
     "nanohtml": "^1.6.2",
+    "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.3",
     "query-string": "^6.7.0",
     "yaml": "^1.5.1"

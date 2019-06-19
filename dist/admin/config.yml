@@ -1,0 +1,85 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: "dist/assets"
+public_folder: "/assets/"
+collections:
+  -
+    name: "work"
+    label: "Work"
+    folder: "src/content/work"
+    format: 'yml'
+    create: true
+    fields:
+      - { name: template, widget: hidden, default: project }
+      - { label: Title, name: title, widget: string }
+      - { label: Thumbnail, name: thumbnail, widget: image }
+  -
+    name: "research"
+    label: "Research"
+    folder: "src/content/research"
+    format: 'yml'
+    create: true
+    fields:
+      -
+        name: "template"
+        widget: "hidden"
+        default: "research"
+      -
+        label: "Title"
+        name: "title"
+        widget: "string"
+  - 
+    name: "pages"
+    label: "Pages"
+    files:
+      - label: "Work"
+        name: work
+        file: "src/content/index.yml"
+        fields:
+          - { name: template, widget: hidden, default: work }
+      - label: "Research"
+        name: research
+        file: "src/content/research.yml"
+        fields:
+          - { name: template, widget: hidden, default: research }
+      - label: "Press"
+        name: "press"
+        file: "src/content/press.yml"
+        fields:
+          - {name: template, widget: hidden, default: press}
+          - {label: Title, name: title, widget: string}
+          - label: Press Items
+            name: pressItems
+            label_singular: Press Item
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: URL, name: url, widget: string}
+      - label: "Office"
+        name: "office"
+        file: "src/content/office.yml"
+        fields:
+          - {name: template, widget: hidden, default: office }
+          - {label: Title, name: title, widget: string}
+          - label: Principals
+            name: principals
+            label_singular: principal
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: URL, name: url, widget: string}
+          - label: Collaborators
+            name: collaborators
+            label_singular: collaborators
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: URL, name: url, widget: string}
+          - label: Addresses
+            name: addresses
+            label_singular: address
+            widget: list
+            fields:
+              - {label: Address, name: address, widget: markdown}
+              - {label: URL, name: url, widget: string}
