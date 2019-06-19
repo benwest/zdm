@@ -12,7 +12,7 @@ collections:
     fields:
       - { name: template, widget: hidden, default: project }
       - { label: Title, name: title, widget: string }
-      - { label: Thumbnail name: thumbnail, widget: image }
+      - { label: Thumbnail, name: thumbnail, widget: image }
   -
     name: "research"
     label: "Research"
