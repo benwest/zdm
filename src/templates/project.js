@@ -1,9 +1,9 @@
 var html = require('nanohtml');
 var raw = require('nanohtml/raw');
 var layout = require('./partials/layout');
-var marked = require('marked');
+var markdown = require('./utils/markdown');
 
 module.exports = ( page, site ) => layout( html`
     ${ page.title }
-    ${ raw( marked( page.body || '' ) ) }
+    ${ raw( markdown( page.body || '' ) ) }
 `)

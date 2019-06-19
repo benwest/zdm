@@ -10,7 +10,7 @@
     "build:bundle": "parcel build src/scss/style.scss src/js/main.js -d dist",
     "build": "run-s build:*",
     "watch:html": "npm run build:html && onchange 'src/content/**/*' 'src/templates/**/*' -- npm run build:html",
-    "watch:bundle": "parcel watch src/scss/style.scss src/js/main.js -d dist",
+    "watch:bundle": "parcel watch src/scss/style.scss src/js/main.js -d dist --no-source-maps",
     "serve": "http-server dist",
     "dev": "run-p watch:* serve"
   },
@@ -31,12 +31,15 @@
   "dependencies": {
     "@babel/core": "^7.4.4",
     "js-beautify": "^1.10.0",
-    "marked": "^0.6.2",
     "mkdirp": "^0.5.1",
     "nanohtml": "^1.6.2",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.3",
     "query-string": "^6.7.0",
+    "remark": "^10.0.1",
+    "remark-html": "^9.0.1",
+    "remark-preset-lint-recommended": "^3.0.2",
+    "unist-util-visit": "^1.4.1",
     "yaml": "^1.5.1"
   }
 }

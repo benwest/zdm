@@ -12,7 +12,7 @@ module.exports = children => html`
             <link rel="stylesheet" href="/scss/style.css">
         </head>
         <body>
-            <h1>zero-degree machine</h1>
+            <h1><a href="/">zero-degree machine</a></h1>
             <nav>
                 <a href="/">Work</a>
                 <a href="/office">Office</a>
@@ -20,7 +20,7 @@ module.exports = children => html`
                 <a href="/press">Press</a>
             </nav>
             ${ children }
-            <script src="/js/bundle.js"></script>
+            <script src="/js/main.js"></script>
         </body>
     </html>
 `
